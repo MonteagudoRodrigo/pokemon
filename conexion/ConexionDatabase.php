@@ -7,19 +7,20 @@ class ConexionDatabase
 
     public function __construct()
     {
-        $this->config = parse_ini_file("../config/config.ini");
+        $this->config = parse_ini_file("./config/config.ini");
         $config = $this->config;
         $this->conexion = new mysqli($config["host"], $config["usuario"], $config["clave"], $config["base"]);
-
     }
 
-    public function probarBase(){
+    public function probarBase()
+    {
         if ($this->conexion->connect_error) {
             die("Error !!!! " . $this->conexion->connect_error);
         }
     }
 
-    public function buscarPokemon(){
+    public function buscarPokemon()
+    {
         $sql = "SELECT * from Pokemon where identificador = ?;";
         $identificador = 1;
         $stmt = $this->conexion->prepare($sql);
@@ -27,5 +28,4 @@ class ConexionDatabase
         $stmt->execute();
         return $stmt->get_result();
     }
-
 }
