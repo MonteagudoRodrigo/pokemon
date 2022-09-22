@@ -15,7 +15,7 @@ if(isset($_POST["ingresar"])){
 
     if($rows > 0){
         $row = $resultado->fetch_assoc();
-        $_SESSION["email_usuario"] = $row["email"];
+        $_SESSION["email"] = $row["email"];
         header("Location: admin.php");
     }else{
         echo "<script>
@@ -24,5 +24,6 @@ if(isset($_POST["ingresar"])){
             </script>";
     }
 }
+
 
 ?>
