@@ -7,6 +7,8 @@ if(isset($_POST["ingresar"])){
     $usuario = mysqli_real_escape_string($database->getConexion(), $_POST["user"]);
     $password = mysqli_real_escape_string($database->getConexion(), $_POST["pass"]);
 
+    // $password_encriptada = sha1($password);
+
     $sql = "SELECT email FROM credenciales WHERE email = '$usuario' AND PASSWORD = '$password'";
     $resultado = $database->getConexion()->query($sql);
     $rows =  $resultado->num_rows;
@@ -16,7 +18,10 @@ if(isset($_POST["ingresar"])){
         $_SESSION["email_usuario"] = $row["email"];
         header("Location: admin.php");
     }else{
-        echo "Usuario No encontrado";
+        echo "<script>
+            alert('Usuario o Password incorrecto');
+            window.location = 'index.php';
+            </script>";
     }
 }
 
