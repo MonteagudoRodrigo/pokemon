@@ -1,3 +1,10 @@
+<?php
+
+include("conexion/ConexionDatabase.php");
+
+$database = new ConexionDatabase();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +23,7 @@
     ?>
 
     <main>
-        <?php
-        include("./conexion/pruebaconexion.php");
-        ?>
+        
     </main>
 
     <?php

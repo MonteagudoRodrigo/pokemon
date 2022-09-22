@@ -1,17 +1,17 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
-header{
+/* header{
     background-color: red;
 }
 
 footer{
     background-color: green;
-}
+} */
 
-header, footer{
+/* header, footer{
     text-align: center;
-}
+} */
