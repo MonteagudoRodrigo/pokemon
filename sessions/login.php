@@ -7,9 +7,9 @@ if(isset($_POST["ingresar"])){
     $usuario = mysqli_real_escape_string($database->getConexion(), $_POST["user"]);
     $password = mysqli_real_escape_string($database->getConexion(), $_POST["pass"]);
 
-    // $password_encriptada = sha1($password);
+    $password_encriptada = md5($password);
 
-    $sql = "SELECT email FROM credenciales WHERE email = '$usuario' AND PASSWORD = '$password'";
+    $sql = "SELECT email FROM credenciales WHERE email = '$usuario' AND PASSWORD = '$password_encriptada'";
     $resultado = $database->getConexion()->query($sql);
     $rows =  $resultado->num_rows;
 
