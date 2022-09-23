@@ -5,7 +5,11 @@
             <th scope="col" class="pokemon-column-info">Tipo</th>
             <th scope="col">Numero</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Accion</th>
+            <?php
+            if (isset($_SESSION["pokelog"])) {
+                echo '<th scope="col">Accion</th>';
+            }
+            ?>
         </tr>
     </thead>
     <tbody>
@@ -14,12 +18,14 @@
             <td class='pokemon-column-info'>TYPE</td>
             <td>NUM</td>
             <td>NAME</td>
-            <td>
-                <div class='d-flex justify-content-center gap-2'>
-                    <button class='btn btn-success'>Editar</button>
-                    <button class='btn btn-danger'>Borrar</button>
-                </div>
-            </td>
+            <?php
+            if (isset($_SESSION["pokelog"])) {
+                echo "<td><div class='d-flex justify-content-center gap-2'>
+                         <button class='btn btn-success'>Editar</button>
+                         <button class='btn btn-danger'>Borrar</button>
+                     </div></td>";
+            }
+            ?>
         </tr>
     </tbody>
 </table>

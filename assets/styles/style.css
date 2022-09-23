@@ -15,6 +15,15 @@ main {
   max-width: 1440px;
 }
 
+.logotipe{
+  font-family: "Pokemon", sans-serif;
+  /* letter-spacing: 2px; */
+  color: rgb(255, 251, 0) !important;
+  -webkit-text-stroke: 2px rgb(0, 20, 136);
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .pokemon-column-info {
     display: none;
@@ -33,6 +42,11 @@ main {
 @media (max-width: 992px) {
   .menu-info-admin {
     flex-direction: column;
+  }
+
+  .menu-info-admin .menu-info-admin__item {
+    align-self: flex-start;
+    margin: 0;
   }
 
   .menu-info-admin a {
