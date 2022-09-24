@@ -14,7 +14,5 @@ foreach ($falopero as $pokemon) {
     $tipoPokemon = new TipoPokemon($id, $descripcion, $imagenTIpo);
     $pokemones = new Pokemon($identificador, $tipoPokemon);
 
-    echo $pokemones->obtenerDatosTipoPokemon();
-
+    echo $pokemones->obtenerDescripcionTipoPokemon();
 }
-

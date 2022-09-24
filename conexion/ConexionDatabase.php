@@ -1,6 +1,6 @@
 <?php
-include_once("../model/Pokemon.php");
-include_once("../model/TipoPokemon.php");
+include_once("./model/Pokemon.php");
+include_once("./model/TipoPokemon.php");
 
 class ConexionDatabase
 {
@@ -9,7 +9,7 @@ class ConexionDatabase
 
     public function __construct()
     {
-        $this->config = parse_ini_file("../config/config.ini");
+        $this->config = parse_ini_file("./config/config.ini");
         $config = $this->config;
         $this->conexion = new mysqli($config["host"], $config["usuario"], $config["clave"], $config["base"]);
     }

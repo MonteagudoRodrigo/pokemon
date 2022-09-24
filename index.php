@@ -30,12 +30,11 @@ session_start();
         </section>
 
         <section>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <?php
+             if (isset($_SESSION["pokelog"])) {
+                echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Agregar nuevo pokemon
             </button>
-            <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -52,7 +51,9 @@ session_start();
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>';
+             }
+            ?>  
         </section>
     </main>
 
