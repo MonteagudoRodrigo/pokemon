@@ -1,57 +1,37 @@
-<table class="table table-bordered text-center mt-4">
-    <thead>
-    <tr class="table-success">
-        <th scope="col" class="pokemon-column-info">Imagen</th>
-        <th scope="col" class="pokemon-column-info">Tipo</th>
-        <th scope="col">Numero</th>
-        <th scope="col">Nombre</th>
-        <?php
-        if (isset($_SESSION["pokelog"])) {
-            echo '<th scope="col">Accion</th>';
-        }
-        ?>
-    </tr>
-    </thead>
-<tbody>
 <?php
-include_once("./conexion/ConexionDatabase.php");
+include_once("../conexion/ConexionDatabase.php");
 
 $conn = new ConexionDatabase();
-$buscar = $_GET["busqueda"];
+$buscar = $_POST["busqueda"];
 
 $resultado = $conn->buscarPokemon($buscar);
 
 if($resultado->num_rows >= 1){
     foreach ($resultado as $pokemon) {
         $identificador = $pokemon['identificador'];
-        $tipo = $pokemon['tipo'];
         $nombrePokemon = $pokemon['nombre'];
         $imagenPokemon = $pokemon['imagen'];
-        $descripcion = $pokemon['descripcion'];
         $imagenTIpo = $pokemon['imagenTipo'];
-        $id = $pokemon['id'];
 
-        //$tipoPokemon = new TipoPokemon($id, $descripcion, $imagenTIpo);
-        //$pokemones = new Pokemon($identificador, $tipoPokemon);
-        // echo $pokemones->obtenerDescripcionTipoPokemon();
-
+        include_once("home.php");
         echo '<tr>
             <th class="pokemon-column-info"><img src="' . $imagenPokemon . '" alt="" width="50" class="m-auto d-block"></th>
             <td class="pokemon-column-info"><img src="' . $imagenTIpo . '" alt="" width="50" class="m-auto"></td>
             <td>' . $identificador . '</td>
             <td>' . $nombrePokemon . '</td>';
+
         if (isset($_SESSION["pokelog"])) {
-            echo "<td><div class='d-flex justify-content-center gap-2'>
+            echo "<td>
+                     <div class='d-flex justify-content-center gap-2'>
                          <button class='btn btn-success'>Editar</button>
                          <button class='btn btn-danger'>Borrar</button>
-                     </div></td>";
+                     </div>
+                     </td>";
         }
-
         echo '</tr>';
     }
-    header("Location: ../index.php");
 }else{
-    echo "Pokemon no encontrado";
+    //Agregar "Pokemon no encontrado"
     header("Location: ../index.php");
 }
 
@@ -60,3 +40,7 @@ if($resultado->num_rows >= 1){
 
 </tbody>
 </table>
+
+<?php
+include("footer.php");
+?>
