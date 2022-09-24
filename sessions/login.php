@@ -3,15 +3,13 @@ session_start();
 $usuario = $_POST["user"];
 $password = $_POST["pass"];
 
-if($usuario == "admin@mail.com" && $password == "202cb962ac59075b964b07152d234b70"){
-    session_start();
+if($usuario == "Admin@mail.com" && $password == "123"){
     $_SESSION["pokelog"] = $usuario;
-    header("Location : index.php");
-    exit();
+    header("Location: ../index.php");
 }else{
+    session_unset();
     session_destroy();
-    header("Location: index.php");
-    exit();
+    header("Location: ../index.php");
 }
 echo "WEOLCOME ADMIN! " . $usuario;
 
@@ -30,7 +28,7 @@ echo "WEOLCOME ADMIN! " . $usuario;
 //     if($rows > 0){
 //         $row = $resultado->fetch_assoc();
 //         $_SESSION["email"] = $row["email"];
-//         header("Location: admin.php");
+//         header("Location:);
 //     }else{
 //         echo "<script>
 //             alert('Usuario o Password incorrecto');

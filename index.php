@@ -1,7 +1,4 @@
 <?php
-
-include("conexion/ConexionDatabase.php");
-$database = new ConexionDatabase();
 session_start();
 
 // if (!isset($_SESSION["pokelog"])) {
