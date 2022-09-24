@@ -24,9 +24,20 @@ session_start();
     ?>
     <main>
         <section>
+            <div>
+                <form action="search.php" method="POST" class="mt-2 input-group">
+                    <input type="search" class="form-control rounded" placeholder="Search" name="busqueda" aria-label="Search" aria-describedby="search-addon" required />
+                    <button type="submit" class="btn btn-outline-primary">Buscar</button>
+                </form>
+            </div>
             <?php
-            include("./sections/table.php")
+            if(isset($_GET["busqueda"])) {
+                include_once("sections/search.php");
+            }else{
+                include_once("sections/contentTable.php");
+            }
             ?>
+
         </section>
 
         <section>
