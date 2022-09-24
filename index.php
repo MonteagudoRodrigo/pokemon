@@ -1,13 +1,11 @@
 <?php
 
 include("conexion/ConexionDatabase.php");
-
 $database = new ConexionDatabase();
-$database->getConexion();
 session_start();
 
-if(isset($_SESSION["email"])){
-    header("Location: admin.php");
+if (!isset($_SESSION["pokelog"])) {
+    echo "Hola Admin!";
 }
 ?>
 <!DOCTYPE html>
@@ -26,9 +24,38 @@ if(isset($_SESSION["email"])){
     <?php
     include("./sections/header.php");
     ?>
-
     <main>
-        
+        <section>
+            <?php
+            include("./sections/table.php")
+            ?>
+        </section>
+
+        <section>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Agregar nuevo pokemon
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ingrese los datos del pokemon</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <?php

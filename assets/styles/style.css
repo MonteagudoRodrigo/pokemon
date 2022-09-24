@@ -15,19 +15,27 @@ main {
   max-width: 1440px;
 }
 
-
-@media (max-width: 768px){
-  .pokemon-column-info{
+@media (max-width: 768px) {
+  .pokemon-column-info {
     display: none;
   }
-}
 
-@media (max-width: 992px){
-  .menu-info-admin{
+  .form-login {
+    display: flex;
     flex-direction: column;
   }
 
-  .menu-info-admin a{
+  .form-login input#ingresar {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-info-admin {
+    flex-direction: column;
+  }
+
+  .menu-info-admin a {
     margin: 0;
     width: fit-content;
     margin: 10px;
