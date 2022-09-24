@@ -51,7 +51,25 @@ class ConexionDatabase
         return $this->conexion;
     }
 
-    
+    public function eliminarPokemon($input)
+    {
+        $sql = "DELETE  from Pokemon WHERE id= ? ";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("i", $input);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+    public function editarPokemon($input)
+    {
+        $sql = "UPDATE  from Pokemon WHERE id= ? ";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("i", $input);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+
 }
 
 

@@ -5,6 +5,7 @@ create TABLE credenciales
 (email VARCHAR(80), 
 password VARCHAR(50)); 
 
+
 UPDATE pokemon p
 SET p.identificador=14,
 p.nombre= "Algo",
@@ -57,8 +58,13 @@ INSERT INTO POKEMON(identificador , imagen, nombre, tipo, descripcion)
 values(002 , 'img/yvysaur.png', 'Yvysaur', 1, 
 'Ivysaur es un Pokémon de tipo planta/veneno introducido en la primera generación.
  Es la evolución de Bulbasaur, uno de los Pokémon iniciales de Kanto.');
- 
- 
+
+INSERT INTO POKEMON(identificador , imagen, nombre, tipo, descripcion)
+values(003 , 'img/yvysaur.png', 'charizar', 4,
+       'Ivysaur es un Pokémon de tipo planta/veneno introducido en la primera generación.
+        Es la evolución de Bulbasaur, uno de los Pokémon iniciales de Kanto.');
+
+
  
 SELECT * FROM pokemon join tipo_pokemon on pokemon.tipo = tipo_pokemon.id WHERE nombre = 'squirtle';
 
