@@ -1,5 +1,5 @@
 <?php
-include_once("../conexion/ConexionDatabase.php");
+include_once("conexion/ConexionDatabase.php");
 
 $conn = new ConexionDatabase();
 $buscar = $_POST["busqueda"];
@@ -13,7 +13,7 @@ if($resultado->num_rows >= 1){
         $imagenPokemon = $pokemon['imagen'];
         $imagenTIpo = $pokemon['imagenTipo'];
 
-        include_once("home.php");
+        include_once("sections/home.php");
         echo '<tr>
             <th class="pokemon-column-info"><img src="' . $imagenPokemon . '" alt="" width="50" class="m-auto d-block"></th>
             <td class="pokemon-column-info"><img src="' . $imagenTIpo . '" alt="" width="50" class="m-auto"></td>
@@ -32,7 +32,7 @@ if($resultado->num_rows >= 1){
     }
 }else{
     //Agregar "Pokemon no encontrado"
-    header("Location: ../index.php");
+    header("Location: index.php");
 }
 
 
@@ -42,5 +42,5 @@ if($resultado->num_rows >= 1){
 </table>
 
 <?php
-include("footer.php");
+include("sections/footer.php");
 ?>

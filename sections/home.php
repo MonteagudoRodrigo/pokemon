@@ -20,7 +20,7 @@
 <main>
  <section>
     <div>
-        <form  class="mt-2 input-group" action="./sections/search.php" method='POST' enctype='text/plaine'>
+        <form class="mt-2 input-group" action="buscarPokemon.php" method='POST' enctype='text/plaine'>
             <input class="form-control rounded" type="search" id="busqueda" placeholder="Search"
                    name="busqueda" aria-label="Search" aria-describedby="search-addon" required />
             <button type="submit" class="btn btn-outline-primary">Buscar</button>
