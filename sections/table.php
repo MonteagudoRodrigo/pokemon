@@ -30,8 +30,8 @@
         
             // echo $pokemones->obtenerDescripcionTipoPokemon();
            echo '<tr>
-            <th class="pokemon-column-info"><img src="http://localhost/pokemon/'.$imagenPokemon.'" alt="" width="50"></th>
-            <td class="pokemon-column-info"><img src="http://localhost/pokemon/'.$imagenTIpo.'" alt="" width="50"></td>
+            <th class="pokemon-column-info"><img src="http://localhost/pokemon/'.$imagenPokemon.'" alt="" width="50" class="m-auto d-block"></th>
+            <td class="pokemon-column-info"><img src="http://localhost/pokemon/'.$imagenTIpo.'" alt="" width="50" class="m-auto"></td>
             <td>'.$identificador.'</td>
             <td>'.$nombrePokemon.'</td>';
             if (isset($_SESSION["pokelog"])) {
