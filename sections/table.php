@@ -34,6 +34,3 @@ foreach ($pokemones as $pokemon) {
 </tbody>
 </table>
 
-<?php
-include("footer.php");
-?>
