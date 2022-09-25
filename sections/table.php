@@ -17,7 +17,9 @@ foreach ($pokemones as $pokemon) {
             <td class='pokemon-column-info'> <img src=" . $imagenPokemon." alt='' width='50' class='m-auto d-block'></td>
             <td class='pokemon-column-info'><img src=". $imagenTIpo." alt='' width='50' class='m-auto'></td>
             <td><a href='./detallePokemon.php/?param=$identificador'> " .$identificador. "</td>
-            <td> <a href='./detallePokemon.php/?param=$nombrePokemon'> " .$nombrePokemon."</td>";
+            <td> <a href='./detallePokemon.php/?param=$nombrePokemon'> " .$nombrePokemon.
+        "</td>";
+
     if (isset($_SESSION["pokelog"])) {
         echo "<td> <form action= './modificarPokemon.php' method='get' enctype='text/plain'>
 <div class='d-flex justify-content-center gap-2'>
