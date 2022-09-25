@@ -1,9 +1,8 @@
 <?php
-if(!isset($_SESSION["pokelog"])){
-  
-}
-?>
-<!DOCTYPE html>
+session_start();
+if(isset($_SESSION["pokelog"])){
+    echo '
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,31 +17,17 @@ if(!isset($_SESSION["pokelog"])){
 
 <body>
     <header>
-        <?php
-        include("sections/header.php");
-        ?>
-    </header>
-    <main>
-        <?php
-        if (isset($_COOKIE["PokemonExistente!"])) {
-            setcookie("PokemonExistente!", 1, time() - (86400 * 15));
-            echo '<script>
+    ';
+    include("sections/header.php");
+    echo '</header>
+    <main>';
+    if (isset($_COOKIE["PokemonExistente!"])) {
+        setcookie("PokemonExistente!", 1, time() - (86400 * 15));
+        echo '<script>
                 alert("El número/pokemon ya existe por favor agregue otro");
             </script>';
-        }
-        if (isset($_COOKIE["PokemonAgregado"])) {
-            setcookie("PokemonAgregado", 1, time() - (86400 * 15));
-            echo '
-                <script>
-                    alert("El pokemon ha sido agregado exitosamente!);
-                    window.location = "";
-                </script>;
-           ';
-            header("Location: index.php");
-        }
-
-        ?>
-        <section>
+    }
+    echo '<section>
             <div class="modal-dialog">
                 <div class="modal-content bg-light">
                     <div class="modal-header">
@@ -81,4 +66,7 @@ if(!isset($_SESSION["pokelog"])){
     </script>
 </body>
 
-</html>
+</html>';
+}else{
+    header("location: index.php");
+}
