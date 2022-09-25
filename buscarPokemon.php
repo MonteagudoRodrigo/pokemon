@@ -31,8 +31,8 @@ if($resultado->num_rows >= 1){
         echo '</tr>';
     }
 }else{
-    //Agregar "Pokemon no encontrado"
-    header("Location: index.php");
+    setcookie("pokemonNoEncontrado",1, time() + (86400 * 15));
+    header("location: index.php");
 }
 
 
@@ -44,3 +44,4 @@ if($resultado->num_rows >= 1){
 <?php
 include("sections/footer.php");
 ?>
+
