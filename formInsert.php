@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION["pokelog"])){
+  
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +30,17 @@
                 alert("El número/pokemon ya existe por favor agregue otro");
             </script>';
         }
+        if (isset($_COOKIE["PokemonAgregado"])) {
+            setcookie("PokemonAgregado", 1, time() - (86400 * 15));
+            echo '
+                <script>
+                    alert("El pokemon ha sido agregado exitosamente!);
+                    window.location = "";
+                </script>;
+           ';
+            header("Location: index.php");
+        }
+
         ?>
         <section>
             <div class="modal-dialog">

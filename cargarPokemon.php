@@ -3,6 +3,7 @@ include_once("conexion/ConexionDatabase.php");
 
 $conn = new ConexionDatabase();
 
+
 $insertImagen = 'img/' . $_FILES["insertImagen"]["name"];
 $insertTipo = $_POST["insertTipo"];
 $insertNumero = $_POST["insertNumero"];
