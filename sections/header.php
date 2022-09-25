@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
         <img src="./assets/images/logo-pokebola.png" alt="" width="50" />
-        <a class="ms-4 fw-bold fst-italic logotipe" href="">Pokedex</a>
+        <a class="ms-4 fw-bold fst-italic logotipe" href=".../Pokemon/index.php">Pokedex</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

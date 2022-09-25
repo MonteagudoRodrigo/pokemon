@@ -15,11 +15,15 @@
     include("sections/header.php");
     ?>
 </header>
-<p>funciona la concha de tu madre</p>
-<?
-$dale = $_GET['param'];
-echo ($dale);
-?>
+<p>funciona la concha de tu madre </p>
+<div>
+    <?
+    echo
+    $_GET['param'];
+
+    ?>
+</div>
+
 </body>
 <?php
 include("sections/footer.php");
