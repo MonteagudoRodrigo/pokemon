@@ -1,5 +1,5 @@
 <?php
-
+include_once("./model/Pokemon.php");
 class ConexionDatabase
 {
     private $config;
@@ -7,7 +7,7 @@ class ConexionDatabase
 
     public function __construct()
     {
-        $this->config = parse_ini_file("D:/xampp/htdocs/pokedex2/pokemon/config/config.ini");
+        $this->config = parse_ini_file("./config/config.ini");
         $config = $this->config;
         $this->conexion = new mysqli($config["host"], $config["usuario"], $config["clave"], $config["base"]);
     }
@@ -37,12 +37,14 @@ class ConexionDatabase
         return $stmt->get_result();
     }
 
-    public function query($sql) {
+    public function query($sql)
+    {
         $respuesta = $this->conexion->query($sql);
         return $respuesta->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function execute($sql) {
+    public function execute($sql)
+    {
         $this->conexion->query($sql);
     }
 
@@ -51,7 +53,37 @@ class ConexionDatabase
         return $this->conexion;
     }
 
-    
+    public function existePokemon($identificador, $nombre)
+    {
+        $pokemones = $this->getPokemon();
+        foreach ($pokemones as $pokemon) {
+            if ($pokemon["identificador"] == $identificador || $pokemon["nombre"] == $nombre) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function agregarPokemon($identificador, $imagen, $nombre, $tipo, $descripcion)
+    {
+        // $mensaje = "";
+        // if ($this->buscarPokemon($identificador) == $identificador) {
+        //     $mensaje = "Pokemon existente!";
+        //     return $mensaje;
+        // } else {
+
+        $newPokemon = new Pokemon($identificador, $imagen, $nombre, $tipo, $descripcion);
+        $sql = "INSERT INTO pokemon(identificador , imagen, nombre, tipo, descripcion) 
+            VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->conexion->prepare($sql);
+        $ident = $newPokemon->getIdentificador();
+        $img = $newPokemon->getImagen();
+        $nomb = $newPokemon->getNombre();
+        $tip = $newPokemon->getTipo();
+        $desc = $newPokemon->getDescripcion();
+        $stmt->bind_param("issis",  $ident,  $img, $nomb, $tip, $desc);
+        $stmt->execute();
+        $mensaje = "Pokemon creado!";
+       
+    }
 }
-
-

@@ -8,12 +8,16 @@ class Pokemon
     private $tipo;
     private $descripcion;
 
-    public function __construct($identificador, $tipo)
+
+    public function __construct($identificador, $imagen, $nombre, $tipo, $descripcion)
     {
         $this->identificador = $identificador;
+        $this->imagen = $imagen;
+        $this->nombre = $nombre;
         $this->tipo = $tipo;
-
+        $this->descripcion = $descripcion;
     }
+
 
     public function getIdentificador()
     {
