@@ -10,7 +10,6 @@
 
             </ul>
             <?php
-            session_start();
             if (isset($_SESSION["pokelog"])) {
                 $usuarioLogueado = $_SESSION["pokelog"];
                 echo '<div class="d-flex justify-content-between menu-info-admin gap-2 align-items-center">
