@@ -32,10 +32,10 @@
     <table class="table table-bordered text-center mt-4">
         <thead>
         <tr class="table-success">
-            <th scope="col" class="pokemon-column-info">Imagen</th>
-            <th scope="col" class="pokemon-column-info">Tipo</th>
-            <th scope="col">Numero</th>
-            <th scope="col">Nombre</th>
+            <th scope="col"   class="pokemon-column-info" >Imagen</th>
+            <th scope="col"    class="pokemon-column-info">Tipo</th>
+            <th scope="col"  >Numero</th>
+            <th scope="col"  >Nombre</th>
             <?php
             if (isset($_SESSION["pokelog"])) {
                 echo '<th scope="col">Accion</th>';
