@@ -13,6 +13,7 @@ foreach ($pokemones as $pokemon) {
 }
 
 echo '
+<p>esto funciona</p>
             <div class="pokemon-column-info"><img src="'. $imagenPokemon.'" alt="" width="50" class="m-auto d-block"></div>
             <div class="pokemon-column-info"><img src="'. $imagenTIpo.'" alt="" width="50" class="m-auto"></div>
             <div> '.$identificador.'</div>

@@ -15,13 +15,18 @@
     include("sections/header.php");
     ?>
 </header>
-<p>funciona la concha de tu madre </p>
-<div>
-    <?
-    echo
-    $_GET['param'];
 
+<div>
+    <p>funciona la concha de tu madre </p>
+    <?
+
+    if (isset($_GET['param'])) {
+        echo $_GET['param'];
+    } else {
+        echo '<p> esta mierda no funciona</p>';
+    }
     ?>
+
 </div>
 
 </body>
