@@ -12,11 +12,14 @@ foreach ($pokemones as $pokemon) {
     $descripcionPokemon = $pokemon['descripcion'];
 }
 
-echo '<tr>
-            <td class="pokemon-column-info"><img src="'. $imagenPokemon.'" alt="" width="50" class="m-auto d-block"></td>
-            <td class="pokemon-column-info"><img src="'. $imagenTIpo.'" alt="" width="50" class="m-auto"></td>
-            <td> '.$identificador.'</td>
-            <td>  '.$nombrePokemon.'</td> </tr>';
+echo '
+            <div class="pokemon-column-info"><img src="'. $imagenPokemon.'" alt="" width="50" class="m-auto d-block"></div>
+            <div class="pokemon-column-info"><img src="'. $imagenTIpo.'" alt="" width="50" class="m-auto"></div>
+            <div> '.$identificador.'</div>
+            <div>  '.$nombrePokemon.'</div> 
+            <div>  '.$descripcionPokemon.'</div>';
+
+
 
 
 

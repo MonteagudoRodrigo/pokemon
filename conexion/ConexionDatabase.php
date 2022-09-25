@@ -64,7 +64,7 @@ class ConexionDatabase
 
     public function editarPokemon($input)
     {
-        $sql = "UPDATE  from Pokemon WHERE id= ? ";
+        $sql = "UP";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bind_param("i", $input);
         $stmt->execute();
