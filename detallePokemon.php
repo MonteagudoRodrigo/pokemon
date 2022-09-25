@@ -27,11 +27,11 @@ echo '<!DOCTYPE html>
 </head>';
 include_once ('sections/header.php');
 echo '   <body><tr>
-            <td class="pokemon-column-info"> <img src=' . $imagenPokemon.' alt="" width="50" class="m-auto d-block"></td>
-            <td class="pokemon-column-info"><img src='. $imagenTIpo.' alt="" width="50" class="m-auto"></td>
-            <td> ' .$identificador. '</td>
-            <td>  ' .$nombrePokemon.'</td>
-            <td>  ' .$descripcionPokemon.'</td>
+            <div class="pokemon-column-info"> <img src=' . $imagenPokemon.' alt="" width="50" class="m-auto d-block"></div>
+            <div class="pokemon-column-info"><img src='. $imagenTIpo.' alt="" width="50" class="m-auto"></div>
+            <div> ' .$identificador. '</div>
+            <div>  ' .$nombrePokemon.'</div>
+            <div>  ' .$descripcionPokemon.'</div>
             </body> ';
 
 

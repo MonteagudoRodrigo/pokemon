@@ -23,7 +23,7 @@ foreach ($pokemones as $pokemon) {
     if (isset($_SESSION["pokelog"])) {
         echo "<td> <form action= './modificarPokemon.php' method='get' enctype='text/plain'>
 <div class='d-flex justify-content-center gap-2'>
-                         <button class='btn btn-success' name = 'editar' method='GET' value='$id'>Editar</button>
+                         <button class='btn btn-success' name = 'editar' method='GET' value='$id'><a href='./vistaModificarPokemon.php/?param=$identificador'>Editar</a></button>
                          <button class='btn btn-danger' name = 'eliminar' method='GET' value='$id'>Borrar</button>
                      </div></form></td>";
     }

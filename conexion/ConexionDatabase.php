@@ -64,12 +64,13 @@ class ConexionDatabase
         return $stmt->get_result();
     }
 
-    public function editarPokemon($input)
+    public function modificarPokemon($input)
     {
-        $sql = "UP";
+        $sql = "UPDATE Pokemon SET tipo = ? ,  identificador = ? ,  nombre = ? ,  imagen = ? , descripcion = ?  WHERE id=' .$input.'";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("i", $input);
+        $stmt->bind_param("issis",  $ident,  $img, $nomb, $tip, $desc);
         $stmt->execute();
+        $mensaje = "el cambia a sido completado!";
         return $stmt->get_result();
     }
 
@@ -107,4 +108,6 @@ class ConexionDatabase
         $mensaje = "Pokemon creado!";
        
     }
+
+
 }

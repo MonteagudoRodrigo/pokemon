@@ -6,6 +6,7 @@ if(isset($_GET['eliminar'])){
     $conn->eliminarPokemon($_GET['eliminar']);
     header('location: index.php');
 
-}else{
+}else {
+
 
 }
