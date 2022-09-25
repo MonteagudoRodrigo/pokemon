@@ -13,13 +13,15 @@ $rutaArchivoTemporal = $_FILES["insertImagen"]["tmp_name"];
 $rutaArchivoFinal = $insertImagen;
 move_uploaded_file($rutaArchivoTemporal, $rutaArchivoFinal);
 
-$existe= $conn->existePokemon($insertNumero, $insertNombre);
+$existe = $conn->existePokemon($insertNumero, $insertNombre);
 
-if($existe){
-   echo "No se puede!";
-}else{
+if ($existe) {
+    setcookie("PokemonExistente!", 1, time() + (86400 * 15));
+    header("location: formInsert.php");
+} else {
     $conn->agregarPokemon($insertNumero, $insertImagen, $insertNombre, $insertTipo, $insertDescripcion);
-    echo "Pokemon agregado!";
+    setcookie("PokemonAgregado", 1, time() + (86400 * 15));
+    header("location: index.php");
 }
 
 ?>

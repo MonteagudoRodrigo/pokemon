@@ -12,21 +12,36 @@
 </head>
 
 <body>
+
     <header>
         <?php
         include("header.php");
         ?>
     </header>
+
     <main>
         <section>
             <div>
                 <form class="mt-2 input-group" action="buscarPokemon.php" method='POST' enctype='text/plaine'>
-                    <input class="form-control rounded" type="search" id="busqueda" placeholder="Search" name="busqueda" aria-label="Search" aria-describedby="search-addon" required />
+                    <input class="form-control rounded" type="search" id="busqueda" placeholder="Search" name="busqueda" aria-label="Search" aria-describedby="search-addon" />
                     <button type="submit" class="btn btn-outline-primary">Buscar</button>
                 </form>
             </div>
 
-
+            <?php
+            if (isset($_COOKIE["pokemonNoEncontrado"])) {
+                setcookie("pokemonNoEncontrado", 1, time() - (86400 * 15));
+                echo "<p>
+                Pokemon no encontrado
+            </p>";
+            }
+            if (isset($_COOKIE["PokemonAgregado"])) {
+                setcookie("PokemonAgregado", 1, time() - (86400 * 15));
+                echo '<script>
+                        alert("El pokemon ha sido agregado exitosamente!);
+                    </script>';
+            }
+            ?>
 
             <table class="table table-bordered text-center mt-4">
                 <thead>
@@ -45,7 +60,6 @@
                 <tbody>
 
         </section>
-
 
     </main>
 

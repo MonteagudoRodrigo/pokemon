@@ -30,9 +30,11 @@ class ConexionDatabase
 
     public function buscarPokemon($input)
     {
-        $sql = "SELECT * from Pokemon p JOIN Tipo_pokemon tp ON p.tipo=tp.id WHERE identificador= ?;";
+        $sql = "SELECT p.id, p.tipo, p.identificador, p.nombre, tp.imagenTipo, p.imagen, p.descripcion FROM Pokemon 
+        p JOIN tipo_pokemon tp ON p.tipo=tp.id 
+        WHERE p.nombre = ? OR tp.descripcion= ? OR p.identificador = ? or p.id = ?";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("i", $input);
+        $stmt->bind_param("ssii", $input , $input , $input, $input);
         $stmt->execute();
         return $stmt->get_result();
     }

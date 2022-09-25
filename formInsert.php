@@ -18,6 +18,14 @@
         ?>
     </header>
     <main>
+        <?php
+        if (isset($_COOKIE["PokemonExistente!"])) {
+            setcookie("PokemonExistente!", 1, time() - (86400 * 15));
+            echo '<script>
+                alert("El número/pokemon ya existe por favor agregue otro");
+            </script>';
+        }
+        ?>
         <section>
             <div class="modal-dialog">
                 <div class="modal-content bg-light">
