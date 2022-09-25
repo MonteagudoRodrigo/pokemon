@@ -27,12 +27,3 @@ if ($existe) {
 
 ?>
 
-
-
-<!-- 
-// echo
-// $insertImagen,
-// $insertTipo,
-// $insertNumero,
-// $insertNombre,
-// $insertDescripcion; -->
