@@ -55,19 +55,18 @@ en la primera generación. Es uno de los Pokémon iniciales
  Destaca por ser el primer Pokémon de la Pokédex Nacional y la en la Pokédex de Kanto.');
 
 INSERT INTO POKEMON(identificador , imagen, nombre, tipo, descripcion) 
-values(002 , 'img/yvysaur.png', 'Yvysaur', 1, 
+values(003 , 'img/yvysaur.png', 'Yvysaur', 1, 
 'Ivysaur es un Pokémon de tipo planta/veneno introducido en la primera generación.
  Es la evolución de Bulbasaur, uno de los Pokémon iniciales de Kanto.');
 
 INSERT INTO POKEMON(identificador , imagen, nombre, tipo, descripcion)
-values(003 , 'img/yvysaur.png', 'charizar', 4,
+values(002 , 'img/yvysaur.png', 'charizar', 4,
        'Ivysaur es un Pokémon de tipo planta/veneno introducido en la primera generación.
         Es la evolución de Bulbasaur, uno de los Pokémon iniciales de Kanto.');
 
 
  
 SELECT * FROM pokemon join tipo_pokemon on pokemon.tipo = tipo_pokemon.id WHERE nombre = 'squirtle';
-
 
 
 

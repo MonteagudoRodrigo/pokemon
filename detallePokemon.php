@@ -45,10 +45,10 @@ echo '<!DOCTYPE html>
                 <img src="../assets/images/ash.png" alt="" width="60" class="menu-info-admin__item">
                 <p class="m-0 fw-bold text-center menu-info-admin__item">
                 ' . $usuarioLogueado . '</p>
-                <a href="./sessions/logout.php" class="btn btn-danger menu-info-admin__item">Salir</a>
+                <a href="../sessions/logout.php" class="btn btn-danger menu-info-admin__item">Salir</a>
                 </div>';
                 } else {
-                echo '<form action="./sessions/login.php" method="post" class="d-flex  align-items-center gap-2 m-0 form-login">
+                echo '<form action="../sessions/login.php" method="post" class="d-flex  align-items-center gap-2 m-0 form-login">
                 <input type="text" name="user" id="user" placeholder="email" class="form-control">
                 <input type="password" name="pass" id="pass" placeholder="password" class="form-control">
                 <input type="submit" value="ingresar" class="btn btn-light fw-bold login-button" name="ingresar" id="ingresar">

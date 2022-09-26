@@ -1,6 +1,5 @@
 <?php
 $identificador =  isset($_GET['param']) ? $_GET['param'] : "";
-var_dump($identificador);
 session_start();
 if(isset($_SESSION["pokelog"])){
     echo '<!DOCTYPE html>
@@ -35,7 +34,7 @@ if(isset($_SESSION["pokelog"])){
                 <img src="../assets/images/ash.png" alt="" width="60" class="menu-info-admin__item">
                 <p class="m-0 fw-bold text-center menu-info-admin__item">
                 ' . $usuarioLogueado . '</p>
-                <a href="./sessions/logout.php" class="btn btn-danger menu-info-admin__item">Salir</a>
+                <a href="../sessions/logout.php" class="btn btn-danger menu-info-admin__item">Salir</a>
                 </div>';
     } else {
         echo '<form action="./sessions/login.php" method="post" class="d-flex  align-items-center gap-2 m-0 form-login">

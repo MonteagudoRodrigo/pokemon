@@ -58,7 +58,7 @@ if(isset($_SESSION["pokelog"])){
                             <textarea class="form-control" id="insertDescripcion" name="insertDescripcion" placeholder="Agregar descripción" rows="5" form="form-insert" required></textarea>
                     </div>
                     <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><a class="btn-danger" href="index.php">Cancelar</a></button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><a class="btn" href="index.php">Cancelar</a></button>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                     </form>

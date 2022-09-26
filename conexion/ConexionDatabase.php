@@ -7,7 +7,7 @@ class ConexionDatabase
 
     public function __construct()
     {
-        $this->config = parse_ini_file("C:/xampp/htdocs/pokemon/config/config.ini");
+        $this->config = parse_ini_file("D:/xampp/htdocs/pokemon/config/config.ini");
         $config = $this->config;
         $this->conexion = new mysqli($config["host"], $config["usuario"], $config["clave"], $config["base"]);
     }
@@ -22,7 +22,7 @@ class ConexionDatabase
 
     public function getPokemon()
     {
-        $sql = "SELECT * from Pokemon p JOIN Tipo_pokemon tp ON p.tipo=tp.id;";
+        $sql = "SELECT * from Pokemon p JOIN Tipo_pokemon tp ON p.tipo=tp.id ORDER BY p.identificador; ";
         $stmt = $this->conexion->prepare($sql);
         $stmt->execute();
         return $stmt->get_result();
