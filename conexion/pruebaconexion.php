@@ -3,15 +3,16 @@
 include_once("ConexionDatabase.php");
 
 $conn = new ConexionDatabase();
+$falopero = $conn->getPokemon();
 
-$conn->probarBase();
-
- $prueba = $conn->buscarPokemon();
-
-foreach ($prueba as $pokemon) {
+foreach ($falopero as $pokemon) {
     $identificador = $pokemon['identificador'];
-    $nombre = $pokemon['nombre'];
-    echo $identificador;
-    echo $nombre;
-}
+    $tipo = $pokemon['tipo'];
+    $descripcion = $pokemon['descripcion'];
+    $imagenTIpo = $pokemon['imagenTipo'];
+    $id = $pokemon['id'];
+    $tipoPokemon = new TipoPokemon($id, $descripcion, $imagenTIpo);
+    $pokemones = new Pokemon($identificador, $tipoPokemon);
 
+    echo $pokemones->obtenerDescripcionTipoPokemon();
+}
