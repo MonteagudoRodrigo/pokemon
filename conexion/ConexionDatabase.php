@@ -57,11 +57,12 @@ class ConexionDatabase
 
     public function eliminarPokemon($input)
     {
-        $sql = "DELETE  from Pokemon WHERE id= ? ";
-        $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("i", $input);
-        $stmt->execute();
-        return $stmt->get_result();
+        $sql = "DELETE FROM Pokemon WHERE identificador = ? ";
+        $comando = $this->conexion->prepare($sql);
+        $comando->bind_param("i",$input);
+        $comando->execute();
+        return $comando->get_result();
+
     }
 
     public function modificarPokemon($input)
