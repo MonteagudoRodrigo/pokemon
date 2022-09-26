@@ -1,4 +1,6 @@
 <?php
+$identificador =  isset($_GET['param']) ? $_GET['param'] : "";
+var_dump($identificador);
 session_start();
 if(isset($_SESSION["pokelog"])){
     echo '<!DOCTYPE html>
@@ -65,31 +67,31 @@ if(isset($_SESSION["pokelog"])){
            ';
         header("Location: index.php");
     }
-    echo '<section>
-            <div class="modal-dialog">
-                <div class="modal-content bg-light">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ingrese los nuevos datos del pokemon</h5>
+
+    echo "<section>
+            <div class='modal-dialog'>
+                <div class='modal-content bg-light'>
+                    <div class='modal-header'>
+                        <h5 class='modal-title' id='exampleModalLabel'>Ingrese los nuevos datos del pokemon</h5>
                     </div>
-                    <div class="modal-body bg-warning">
-                        <form action="cargarPokemon.php" class="d-flex flex-column gap-3" method="post" id="form-insert" name="form-insert" enctype="multipart/form-data">
-                            <label for="insertImagen" class="fst-italic">Insertar imagen del pokemon
-                                <input type="file" class="form-control" id="insertImagen" name="insertImagen" accept="image/png, image/jpeg">
+                    <div class='modal-body bg-warning'>
+                        <form action='../modificarPokemon.php/?identificador=$identificador' class='d-flex flex-column gap-3' method='post' id='form-insert' name='form-insert' enctype='multipart/form-data'>
+                            <label for='insertImagen' class='fst-italic'>Insertar imagen del pokemon
+                                <input type='file' class='form-control' id='insertImagen' name='insertImagen' accept='image/png, image/jpeg'>
                             </label>
-                            <select class="form-select" id="insertTipo" name="insertTipo">
+                            <select class='form-select' id='insertTipo' name='insertTipo'>
                                 <option disabled selected>Seleccionar tipo</option>
-                                <option value="1">Veneno</option>
-                                <option value="2">Agua</option>
-                                <option value="3">Planta</option>
-                                <option value="4">Electrico</option>
-                            </select>
-                            <input type="text" class="form-control" id="insertNumero" name="insertNumero" placeholder="Agregar número">
-                            <input type="text" class="form-control" id="insertNombre" name="insertNombre" placeholder="Agregar nombre">
-                            <textarea class="form-control" id="insertDescripcion" name="insertDescripcion" placeholder="Agregar descripción" rows="5" form="form-insert"></textarea>
+                                <option value='1'>Veneno</option>
+                                <option value='2'>Agua</option>
+                                <option value='3'>Planta</option>
+                                <option value='4'>Electrico</option>
+                            </select>                            
+                            <input type='text' class='form-control' id='insertNombre' name='insertNombre' placeholder='Agregar nombre'>
+                            <textarea class='form-control' id='insertDescripcion' name='insertDescripcion' placeholder='Agregar descripción' rows='5' form='form-insert'></textarea>
                     </div>
-                    <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><a class="btn-danger" href="../index.php">Cancelar</a></button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    <div class='modal-footer bg-light'>
+                        <button type='button' class='btn btn-danger' data-bs-dismiss='modal'><a class='btn-danger' href='../index.php'>Cancelar</a></button>
+                        <button type='submit' class='btn btn-primary'>Guardar</button>
                     </div>
                     </form>
                 </div>
@@ -99,11 +101,11 @@ if(isset($_SESSION["pokelog"])){
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'>
     </script>
 </body>
 
-</html>';
+</html>";
 
 }else{
     header("location: index.php");

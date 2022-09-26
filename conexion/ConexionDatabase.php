@@ -65,11 +65,12 @@ class ConexionDatabase
 
     }
 
-    public function modificarPokemon($input)
+
+    public function modificarPokemonAll($input, $nombre, $imagen, $descripcion, $tipo)
     {
-        $sql = "UPDATE Pokemon SET tipo = ? ,  identificador = ? ,  nombre = ? ,  imagen = ? , descripcion = ?  WHERE id=' .$input.'";
+        $sql = "UPDATE Pokemon SET identificador = ? ,  nombre = ? , imagen = ? , descripcion = ? , tipo = ?  WHERE identificador= ?";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("issis",  $ident,  $img, $nomb, $tip, $desc);
+        $stmt->bind_param("isssii",  $input, $nombre, $imagen, $descripcion, $tipo, $input);
         $stmt->execute();
         $mensaje = "el cambia a sido completado!";
         return $stmt->get_result();
