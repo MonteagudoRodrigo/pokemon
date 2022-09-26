@@ -12,13 +12,14 @@ foreach ($pokemones as $pokemon) {
     $imagenPokemon = $pokemon['imagen'];
     $imagenTIpo = $pokemon['imagenTipo'];
 
+    
 
     echo "<tr>
-            <td class='pokemon-column-info'> <img src=" . $imagenPokemon." alt='' width='50' class='m-auto d-block'></td>
-            <td class='pokemon-column-info'><img src=". $imagenTIpo." alt='' width='50' class='m-auto'></td>
-            <td><a href='./detallePokemon.php/?param=$identificador'> " .$identificador. "</td>
-            <td> <a href='./detallePokemon.php/?param=$nombrePokemon'> " .$nombrePokemon.
-        "</td>";
+
+            <td> <img src=" . $imagenPokemon . " alt='' width='50' class='m-auto d-block'></td>
+            <td class='pokemon-column-logout'><img src=" . $imagenTIpo . " alt='' width='50' class='m-auto'></td>
+            <td class='pokemon-column-info'><a href='./detallePokemon.php/?param=$identificador'> " .($identificador < 10 ? '00'.$identificador  : '0'.$identificador). "</td>
+            <td> <a href='./detallePokemon.php/?param=$nombrePokemon'> " . $nombrePokemon . "</td>";
 
     if (isset($_SESSION["pokelog"])) {
         echo "<td> <form action= './modificarPokemon.php' method='get' enctype='text/plain'>

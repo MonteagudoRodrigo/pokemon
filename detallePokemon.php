@@ -29,7 +29,7 @@ echo '<!DOCTYPE html>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
-        <img src="http://localhost/pokedex2/pokemon/assets/images/logo-pokebola.png" alt="" width="50" />
+        <img src="http://localhost/pokemon/assets/images/logo-pokebola.png" alt="" width="50" />
         <a class="ms-4 fw-bold fst-italic logotipe" href="../index.php">Pokedex</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,14 +61,31 @@ echo '   </div>
             
             <main>
             <section>
+           
+            <div class="p-4 d-flex my-4 align-items-center  pokemon-detail rounded border border-warning">
             <tr>
-            <div class="pokemon-column-info"> <img src="../'.$imagenPokemon.'" alt="" width="50" class="m-auto d-block"></div>
-            <div class="pokemon-column-info"><img src="../'.$imagenTIpo.'" alt="" width="50" class="m-auto"></div>
-            <div> ' .$identificador. '</div>
-            <div>  ' .$nombrePokemon.'</div>
-            <div>  ' .$descripcionPokemon.'</div>
+        <div class="col-6 mb-4">
+                <img src="../' . $imagenPokemon . '" alt="" width="450" class="m-auto d-block pokemon-img-detail">
+        </div>
+        <div class="col-6">
+            <h2 class="pro-d-title">
+                ' . $nombrePokemon . '
+            </h2>
+            <div class="product_meta">
+                <span class="posted_in"> <strong>Tipo:</strong> <img src="../' . $imagenTIpo . '" alt="" width="50" class="m-auto"></span>
+            </div>
+            <div class="m-bot15 mb-4"> <strong>Numero : </strong> <span class="amount-old">' . 
+            ($identificador < 10 ? '00'.$identificador  : '0'.$identificador). '</span></div>
+            <p>
+            ' . $descripcionPokemon . '
+            </p>
+        </div>
+
+    </div>
             </section>
             </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
             </body> ';
 
 
