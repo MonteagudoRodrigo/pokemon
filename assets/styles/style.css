@@ -10,6 +10,7 @@ nav,
 main {
   padding: 0 3vw;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .btn-editar{
@@ -43,6 +44,11 @@ td{
   text-align: center;
 }
 
+.pokemon-img-detail{
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2)
+}
+
 @media (max-width: 768px) {
   .pokemon-column-info {
     display: none;
@@ -72,6 +78,17 @@ td{
     margin: 0;
     width: fit-content;
     margin: 10px;
+  }
+
+  .pokemon-detail{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pokemon-img-detail{
+    width: 95%;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2)
   }
 }
 
