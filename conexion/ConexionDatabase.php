@@ -7,7 +7,7 @@ class ConexionDatabase
 
     public function __construct()
     {
-        $this->config = parse_ini_file("D:/xampp/htdocs/pokemon/config/config.ini");
+        $this->config = parse_ini_file("C:/xampp/htdocs/pokemon/config/config.ini");
         $config = $this->config;
         $this->conexion = new mysqli($config["host"], $config["usuario"], $config["clave"], $config["base"]);
     }
