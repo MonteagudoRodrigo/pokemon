@@ -10,14 +10,44 @@ if(isset($_SESSION["pokelog"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./assets/styles/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../assets/styles/style.css">
     <title>Pokedex</title>
 </head>
 
 <body>
-    <header>';
-    include("sections/header.php");
-    echo '</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container-fluid">
+        <img src="http://localhost/pokedex2/pokemon/assets/images/logo-pokebola.png" alt="" width="50" />
+        <a class="ms-4 fw-bold fst-italic logotipe" href="../index.php">Pokedex</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+            </ul>
+';
+    if (isset($_SESSION["pokelog"])) {
+        $usuarioLogueado = $_SESSION["pokelog"];
+        echo '<div class="d-flex justify-content-between menu-info-admin gap-2 align-items-center">
+                <img src="../assets/images/ash.png" alt="" width="60" class="menu-info-admin__item">
+                <p class="m-0 fw-bold text-center menu-info-admin__item">
+                ' . $usuarioLogueado . '</p>
+                <a href="./sessions/logout.php" class="btn btn-danger menu-info-admin__item">Salir</a>
+                </div>';
+    } else {
+        echo '<form action="./sessions/login.php" method="post" class="d-flex  align-items-center gap-2 m-0 form-login">
+                <input type="text" name="user" id="user" placeholder="email" class="form-control">
+                <input type="password" name="pass" id="pass" placeholder="password" class="form-control">
+                <input type="submit" value="ingresar" class="btn btn-light fw-bold login-button" name="ingresar" id="ingresar">
+                </form>';
+    };
+    echo '   </div>
+    </div>
+
+</nav>
+';
+    echo '
     <main>';
     if (isset($_COOKIE["PokemonExistente!"])) {
         setcookie("PokemonExistente!", 1, time() - (86400 * 15));
@@ -40,7 +70,6 @@ if(isset($_SESSION["pokelog"])){
                 <div class="modal-content bg-light">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Ingrese los nuevos datos del pokemon</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body bg-warning">
                         <form action="cargarPokemon.php" class="d-flex flex-column gap-3" method="post" id="form-insert" name="form-insert" enctype="multipart/form-data">
@@ -59,7 +88,7 @@ if(isset($_SESSION["pokelog"])){
                             <textarea class="form-control" id="insertDescripcion" name="insertDescripcion" placeholder="Agregar descripción" rows="5" form="form-insert"></textarea>
                     </div>
                     <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><a class="btn-danger" href="../index.php">Cancelar</a></button>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                     </form>

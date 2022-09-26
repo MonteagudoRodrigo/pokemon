@@ -41,7 +41,4 @@ if($resultado->num_rows >= 1){
 </tbody>
 </table>
 
-<?php
-include("sections/footer.php");
-?>
 

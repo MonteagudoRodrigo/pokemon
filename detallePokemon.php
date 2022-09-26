@@ -23,7 +23,7 @@ echo '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./assets/styles/style.css?v='. $tiempo . '">
+    <link rel="stylesheet" href="../assets/styles/style.css?v='. $tiempo . '">
     <title>Pokedex</title>
 </head>
 <body>
@@ -42,7 +42,7 @@ echo '<!DOCTYPE html>
             if (isset($_SESSION["pokelog"])) {
                 $usuarioLogueado = $_SESSION["pokelog"];
                 echo '<div class="d-flex justify-content-between menu-info-admin gap-2 align-items-center">
-                <img src="./assets/images/ash.png" alt="" width="60" class="menu-info-admin__item">
+                <img src="../assets/images/ash.png" alt="" width="60" class="menu-info-admin__item">
                 <p class="m-0 fw-bold text-center menu-info-admin__item">
                 ' . $usuarioLogueado . '</p>
                 <a href="./sessions/logout.php" class="btn btn-danger menu-info-admin__item">Salir</a>

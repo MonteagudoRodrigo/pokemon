@@ -41,7 +41,6 @@ if(isset($_SESSION["pokelog"])){
                 <div class="modal-content bg-light">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Ingrese los datos del pokemon</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body bg-warning">
                         <form action="cargarPokemon.php" class="d-flex flex-column gap-3" method="post" id="form-insert" name="form-insert" enctype="multipart/form-data">
@@ -59,7 +58,7 @@ if(isset($_SESSION["pokelog"])){
                             <textarea class="form-control" id="insertDescripcion" name="insertDescripcion" placeholder="Agregar descripción" rows="5" form="form-insert" required></textarea>
                     </div>
                     <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><a class="btn-danger" href="index.php">Cancelar</a></button>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                     </form>

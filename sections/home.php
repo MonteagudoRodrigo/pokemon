@@ -25,7 +25,7 @@
             <div>
                 <form class="mt-2 input-group" action="buscarPokemon.php" method='POST' enctype='text/plaine'>
                     <input class="form-control rounded" type="search" id="busqueda" placeholder="Search" name="busqueda" aria-label="Search" aria-describedby="search-addon" />
-                    <button type="submit" class="btn btn-outline-primary">Buscar</button>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
             </div>
 
@@ -44,7 +44,7 @@
             }
             ?>
 
-            <table class="table table-bordered text-center mt-4">
+            <table class="table table-bordered text-center mt-4 bg-light">
                 <thead>
                     <tr class="table-success">
                         <th scope="col" class="pokemon-column-info">Imagen</th>
