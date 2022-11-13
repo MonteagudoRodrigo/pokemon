@@ -7,7 +7,7 @@ class ConexionDatabase
 
     public function __construct()
     {
-        $this->config = parse_ini_file("D:/xampp/htdocs/pokemon/config/config.ini");
+        $this->config = parse_ini_file("C:/xampp/htdocs/pokemon/config/config.ini");
         $config = $this->config;
         $this->conexion = new mysqli($config["host"], $config["usuario"], $config["clave"], $config["base"]);
     }
@@ -34,7 +34,7 @@ class ConexionDatabase
         p JOIN tipo_pokemon tp ON p.tipo=tp.id 
         WHERE p.nombre = ? OR tp.descripcion= ? OR p.identificador = ? or p.id = ?";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("ssii", $input , $input , $input, $input);
+        $stmt->bind_param("ssii", $input, $input, $input, $input);
         $stmt->execute();
         return $stmt->get_result();
     }
@@ -59,10 +59,9 @@ class ConexionDatabase
     {
         $sql = "DELETE FROM Pokemon WHERE identificador = ? ";
         $comando = $this->conexion->prepare($sql);
-        $comando->bind_param("i",$input);
+        $comando->bind_param("i", $input);
         $comando->execute();
         return $comando->get_result();
-
     }
 
 
@@ -108,8 +107,24 @@ class ConexionDatabase
         $stmt->bind_param("issis",  $ident,  $img, $nomb, $tip, $desc);
         $stmt->execute();
         $mensaje = "Pokemon creado!";
-       
     }
 
+    public function getUsuarios()
+    {
+        $sql = "SELECT * from credenciales";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
 
+    public function existeUsuario($user, $pass)
+    {
+        $usuarios = $this->getUsuarios();
+        foreach ($usuarios as $usuario) {
+            if ($usuario["email"] == $user && $usuario["password"] == $pass) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
